@@ -1,0 +1,1 @@
+select * from StudentMarks s1 where s1.Marks = (select Max(Marks) from StudentMarks s2 where s2.Subject =s1.Subject and s2.Marks <(select Max(Marks) from StudentMarks s3 where s3.Subject = s1.Subject))
